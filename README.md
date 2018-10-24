@@ -6,10 +6,10 @@ OMPL Motion planner communicating with Universal Robot UR5
 1. Install ROS Kinetic on Ubuntu 16.04
 http://wiki.ros.org/kinetic/Installation/Ubuntu
 
-1.1 Setup Ubuntu Repos
-Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the Ubuntu guide for instructions on doing this. Open "Software & Updates" and make sure that on the first tab of this window, all three are checked on.
+    1. Setup Ubuntu Repos
+    Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." You can follow the Ubuntu guide for instructions on doing this. Open "Software & Updates" and make sure that on the first tab of this window, all three are checked on.
 
-1.2 Sources.list
+    1. Sources.list
 `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
 1.3 Keys
@@ -96,6 +96,7 @@ git clone git@github.com:ros-industrial/ur_modern_driver.git
 ```
 Change to the branch that has the kinetic code for the ur modern driver:
 ```
+cd ur_modern_driver
 git checkout kinetic-devel
 ```
 Then make the workspace
@@ -105,10 +106,8 @@ catkin_make
 ```
 ## Running the code
 
-6. Running it now:
-Now continue the tutorial:
-http://wiki.ros.org/universal_robot/Tutorials/Getting%20Started%20with%20a%20Universal%20Robot%20and%20ROS-Industrial
-At section: "3.5 Making contact with UR v3.x"
+6. Running it now according to section: "3.5 Making contact with UR v3.x" at:
+http://wiki.ros.org/universal_robot/Tutorials/Getting%20Started%20with%20a%20Universal%20Robot%20and%20ROS-Industrial 
 ```
 roslaunch ur_modern_driver ur5_bringup.launch robot_ip:=192.168.1.105 [reverse_port:=REVERSE_PORT]
 ```
