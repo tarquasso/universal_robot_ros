@@ -127,3 +127,4 @@ For starting up RViz with a configuration including the MoveIt! Motion Planning 
 ```
 roslaunch ur5_moveit_config moveit_rviz.launch config:=true
 ```
+In RViz, select the second tab to plan and execute motions after you have dragged the end effector of the robot to a new desired pose.
