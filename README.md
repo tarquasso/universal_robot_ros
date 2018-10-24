@@ -108,9 +108,13 @@ catkin_make
 
 6. Running it now according to section: "3.5 Making contact with UR v3.x" at:
 http://wiki.ros.org/universal_robot/Tutorials/Getting%20Started%20with%20a%20Universal%20Robot%20and%20ROS-Industrial 
+
+Start UR5, then setup its IP address to be on the same subnet. For us, the IP becomes: 192.168.1.106. Next, initialize the robot with the proper payload.
+Back to the linux machine, run:
 ```
-roslaunch ur_modern_driver ur5_bringup.launch robot_ip:=192.168.1.105 [reverse_port:=REVERSE_PORT]
+roslaunch ur_modern_driver ur5_bringup.launch robot_ip:=192.168.1.106 [reverse_port:=REVERSE_PORT]
 ```
+Note: replace "192.168.1.106" with the IP of the robot, shich has to be on the same subnet as the linux machine.
 
 7. Using Moveit
 
