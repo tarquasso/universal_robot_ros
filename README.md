@@ -12,28 +12,28 @@ http://wiki.ros.org/kinetic/Installation/Ubuntu
     1. Sources.list
 `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
-1.3 Keys
+    1. Keys
 `sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116`
 
-1.4 Installation
+    1. Installation
 `sudo apt-get update`
 Desktop-Full Install (Recommended): ROS, rqt, rviz, robot-generic libraries, 2D/3D simulators, navigation and 2D/3D perception
 `sudo apt-get install ros-kinetic-desktop-full`
 
-1.5 Init rosdep
+    1. Init rosdep
 Before you can use ROS, you will need to initialize rosdep. rosdep enables you to easily install system dependencies for source you want to compile and is required to run some core components in ROS.
 ```
 sudo rosdep init
 rosdep update
 ```
 
-1.6 Environment Setup
+    1. Environment Setup
 ```
 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-1.7 Dependencies for building packages
+    1. Dependencies for building packages
 `sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential`
 
 2. Test ROS Installation:
