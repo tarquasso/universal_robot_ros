@@ -103,6 +103,7 @@ Then make the workspace
 cd ~/catkin_ws
 catkin_make
 ```
+## Running the code
 
 6. Running it now:
 Now continue the tutorial:
