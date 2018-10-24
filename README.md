@@ -110,29 +110,20 @@ catkin_make
 http://wiki.ros.org/universal_robot/Tutorials/Getting%20Started%20with%20a%20Universal%20Robot%20and%20ROS-Industrial 
 
 Start UR5, then setup its IP address to be on the same subnet. For us, the IP becomes: 192.168.1.106. Next, initialize the robot with the proper payload.
-Back to the linux machine, run:
+Back to the linux machine, note that as MoveIt! seems to have difficulties with finding plans for the UR with full joint limits [-2pi, 2pi], there is a joint_limited version using joint limits restricted to [-pi,pi]. In order to use this joint limited version, simply use the launch file arguments 'limited'.
+
+In shell #1, run:
 ```
-roslaunch ur_modern_driver ur5_bringup.launch robot_ip:=192.168.1.106 [reverse_port:=REVERSE_PORT]
+roslaunch ur_modern_driver ur5_bringup.launch limited:=true robot_ip:=192.168.1.106 [reverse_port:=REVERSE_PORT]
 ```
 Note: replace "192.168.1.106" with the IP of the robot, shich has to be on the same subnet as the linux machine.
 
-7. Using Moveit
-
-Note that as MoveIt! seems to have difficulties with finding plans for the UR with full joint limits [-2pi, 2pi], there is a joint_limited version using joint limits restricted to [-pi,pi]. In order to use this joint limited version, simply use the launch file arguments 'limited', i.e.:
-
-In shell #1:
-```
-roslaunch ur_modern_driver ur5_bringup.launch limited:=true robot_ip:=192.168.1.105 [reverse_port:=REVERSE_PORT]
-```
-
-For setting up the MoveIt! nodes to allow motion planning run (assumes the connection is already established from section 4.3 above):
-In shell #2:
+For setting up the MoveIt! nodes to allow motion planning run (assumes the connection is already established from the other shell), in a new shell #2, run:
 ```
 roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch limited:=true
 ```
 
-For starting up RViz with a configuration including the MoveIt! Motion Planning plugin run:
-In shell #3:
+For starting up RViz with a configuration including the MoveIt! Motion Planning plugin, in a new shell #3, run:
 ```
 roslaunch ur5_moveit_config moveit_rviz.launch config:=true
 ```
